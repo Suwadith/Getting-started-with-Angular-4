@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 function print(message) {
     console.log(message);
 }
@@ -90,55 +92,54 @@ let getDistance = (pointA: Point, pointB: Point) => {
 
 }*/
 //A much better way
-var Point = (function () {
-    /*private x: number;
-    private y: number;*/
-    /*constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-    }*/
-    //Typescript can't have multiple constructors but you can make the parameters optional
-    function Point(_x, _y) {
-        this._x = _x;
-        this._y = _y;
-        /*this.x = x;
-        this.y = y;*/
-    }
-    Point.prototype.draw = function () {
-        console.log('X: ' + this._x + ', Y: ' + this._y);
-    };
-    Object.defineProperty(Point.prototype, "x", {
-        /*getX() {
-            return this.x;
-        }
-    
-        setX(value) {
-            if(value < 0)
-                throw new Error('Value cannot be less than 0');
-    
-            this.x = value;
-        }*/
-        /*getDistance(another: Point){
-    
-        }*/
-        get: function () {
-            return this._x;
-        },
-        set: function (value) {
-            if (value < 0)
-                throw new Error('Value cannot be less than 0');
-            this._x = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return Point;
-}());
-var point = new Point(1, 2);
+//class Point{
+/*private x: number;
+private y: number;*/
+/*constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+}*/
+//Typescript can't have multiple constructors but you can make the parameters optional
+//constructor(private _x?: number, private _y?: number) {
+/*this.x = x;
+this.y = y;*/
+//}
+//draw(){
+//console.log('X: ' + this._x + ', Y: ' + this._y);
+//}
+/*getX() {
+    return this.x;
+}
+
+setX(value) {
+    if(value < 0)
+        throw new Error('Value cannot be less than 0');
+
+    this.x = value;
+}*/
+/*getDistance(another: Point){
+
+}*/
+//get x() {
+//return this._x;
+//}
+//set x(value) {
+//if(value < 0)
+//throw new Error('Value cannot be less than 0');
+//this._x = value;
+//}
+//}
+var point_1 = require("./point");
+var point = new point_1.Point(1, 2);
 //let point = new Point();
 /*point.x = 1;
 point.y = 2;*/
 //let x = point.getX();
-var x = point.x;
-point.x = 5;
+/*let x = point.x;
+point.x = 5;*/
 point.draw();
+var like_component_1 = require("./like.component");
+var component = new like_component_1.LikeComponent(10, true);
+component.onClick();
+//console.log(`likesCount: ${component._likesCount}, isSlected: ${component._isSelected}`);
+console.log("likesCount: " + component.likesCount + ", isSlected: " + component.isSelected);

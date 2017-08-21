@@ -108,7 +108,7 @@ let getDistance = (pointA: Point, pointB: Point) => {
 }*/
 
 //A much better way
-class Point{
+//class Point{
     /*private x: number;
     private y: number;*/
 
@@ -119,14 +119,14 @@ class Point{
     }*/
 
     //Typescript can't have multiple constructors but you can make the parameters optional
-    constructor(private _x?: number, private _y?: number) {
+    //constructor(private _x?: number, private _y?: number) {
         /*this.x = x;
         this.y = y;*/
-    }
+    //}
 
-    draw(){
-        console.log('X: ' + this._x + ', Y: ' + this._y);
-    }
+//draw(){
+        //console.log('X: ' + this._x + ', Y: ' + this._y);
+    //}
 
     /*getX() {
         return this.x;
@@ -143,19 +143,20 @@ class Point{
 
     }*/
 
-    get x() {
-        return this._x;
-    }
+    //get x() {
+        //return this._x;
+    //}
 
-    set x(value) {
-        if(value < 0)
-            throw new Error('Value cannot be less than 0');
+    //set x(value) {
+        //if(value < 0)
+            //throw new Error('Value cannot be less than 0');
 
-        this._x = value;
-    }
+        //this._x = value;
+    //}
 
-}
+//}
 
+import { Point } from './point';
 
 let point = new Point(1, 2);
 //let point = new Point();
@@ -164,10 +165,20 @@ point.y = 2;*/
 
 //let x = point.getX();
 
-let x = point.x;
-point.x = 5;
+/*let x = point.x;
+point.x = 5;*/
 
 point.draw();
+
+import { LikeComponent } from './like.component';
+
+let component = new LikeComponent(10, true);
+component.onClick();
+//console.log(`likesCount: ${component._likesCount}, isSlected: ${component._isSelected}`);
+
+console.log(`likesCount: ${component.likesCount}, isSlected: ${component.isSelected}`)
+
+
 
 
 
