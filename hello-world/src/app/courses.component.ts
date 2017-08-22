@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
         <img src="{{ imageUrl }}" /> //This is preferred
         <img [src]="imageUrl" /> 
 
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" [class.active]="isActive">Save</button>
 
         <table>
             <tr>
@@ -40,6 +40,8 @@ export class CoursesComponent {
     /* courses = ["course1", "course2", "course3"]; */
     courses;
     imageUrl = "https://www.w3schools.com/css/img_fjords.jpg";
+
+    isActive=false;
 
     colSpan = 2;
 
