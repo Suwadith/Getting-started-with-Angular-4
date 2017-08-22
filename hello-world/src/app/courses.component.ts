@@ -7,12 +7,17 @@ import { Component } from '@angular/core';
     /* template: '<h2>{{ "Title: " +  title }}</h2>' //String Interpolation ( getTitle() ) */
 
     template: `
-        <h2>{{ title }}</h2>
+        <h2>{{ title }}</h2> //This is preferred
+        <h2 [textContent]="title"></h2>
+
         <ul>
             <li *ngFor="let course of courses">
                 {{ course }}
             </li>
         </ul>
+
+        <img src="{{ imageUrl }}" /> //This is preferred
+        <img [src]="imageUrl" /> 
     `
 
 })
@@ -26,6 +31,7 @@ export class CoursesComponent {
 
     /* courses = ["course1", "course2", "course3"]; */
     courses;
+    imageUrl = "https://www.w3schools.com/css/img_fjords.jpg";
 
     constructor(service: CoursesService) { //This is how you decouple
         /* let service = new CoursesService(); */ //this tightly couples the class. So you can't change in Runtime
