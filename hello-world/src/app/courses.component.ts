@@ -19,6 +19,8 @@ import { Component } from '@angular/core';
         <img src="{{ imageUrl }}" /> //This is preferred
         <img [src]="imageUrl" /> 
 
+        <button class="btn btn-primary">Save</button>
+
         <table>
             <tr>
                 <td [attr.colspan]='colSpan'></td>
