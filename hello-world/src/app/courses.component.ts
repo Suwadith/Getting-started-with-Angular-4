@@ -21,6 +21,8 @@ import { Component } from '@angular/core';
 
         <button class="btn btn-primary" [class.active]="isActive">Save</button>
 
+        <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Try</button>
+
         <table>
             <tr>
                 <td [attr.colspan]='colSpan'></td>
