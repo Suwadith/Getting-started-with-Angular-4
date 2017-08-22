@@ -18,6 +18,12 @@ import { Component } from '@angular/core';
 
         <img src="{{ imageUrl }}" /> //This is preferred
         <img [src]="imageUrl" /> 
+
+        <table>
+            <tr>
+                <td [attr.colspan]='colSpan'></td>
+            </tr>
+        </table>
     `
 
 })
@@ -32,6 +38,8 @@ export class CoursesComponent {
     /* courses = ["course1", "course2", "course3"]; */
     courses;
     imageUrl = "https://www.w3schools.com/css/img_fjords.jpg";
+
+    colSpan = 2;
 
     constructor(service: CoursesService) { //This is how you decouple
         /* let service = new CoursesService(); */ //this tightly couples the class. So you can't change in Runtime
